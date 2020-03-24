@@ -1,0 +1,4 @@
+Un petit exo pour ne pas perdre les bases, travailler les boucles, les structures conditionnelles et les listes. Il faut un peu réfléchir pour faire ça bien :
+https://projecteuler.net/problem=46
+
+Un peu de lecture pour la culture mathématique : https://fr.wikipedia.org/wiki/Conjecture_de_Goldbach
