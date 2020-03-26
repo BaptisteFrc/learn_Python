@@ -2,15 +2,15 @@ from math import sqrt
 
 def list_primes_eratosthene(n):
     print("entering primes...")
-    primes = [False, False] + [True for _ in range(2, n+1)]
-    for i in range(n+1):
+    primes = [False, False] + [True for _ in range(2, n+1)] 
+    for i in range(int(sqrt(n+1))):
         if i % 10000 == 0:
             print("primes turn ", i, "/", n)
-        if primes[i]:
-            indice = 2*i
+        if primes[i]: 
+            indice = 2*i # i = 2; Faux pour 2*2, 3*2 = 2*2 + 2, 4*2 = 3*2 + 2, 5*2, etc... 
             while indice < n:
                 primes[indice] = False
-                indice += i
+                indice += i # indice = indice + i
     return [i for i in range(n) if primes[i]]
 
 def counter_example(M):
@@ -30,10 +30,11 @@ def counter_example(M):
                     break   
                 elif i < prime + 2*square:
                     break
-            if i < prime or not counter_ex:
+            if i < prime or not counter_ex: 
                 break
         if counter_ex:
             return i
     return 0
 
-print("answer :", counter_example(100000))
+#print("answer :", counter_example(10000000))
+

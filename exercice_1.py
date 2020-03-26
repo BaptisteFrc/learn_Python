@@ -14,8 +14,6 @@ def list_primes(n):
                 list_primes.append(i)
     return list_primes
 
-
-
 def calculator(max):
     max = int(max)
     a = 0
