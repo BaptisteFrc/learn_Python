@@ -1,0 +1,11 @@
+Essaies de créer les listes suivantes grace aux listes par compréhension :
+ - la liste de tout les nombres de 0 à 100
+ - la liste de tout les nombres de 10 à 20
+ - la liste de tout les carrés de nombre inférieur à 100
+ - la liste de tout les carrés inférieur à 100
+ - la liste de tout les cubes inférieures à 1000 et non multiples de 3
+
+Ensuite essaies de faire le problème euler n°1 : https://projecteuler.net/problem=1 ; ça devrait être du gateau.
+
+Plus dur : Essaies de créer une liste POWER tel que POWER[i] soit une liste contenant les puissances de i jusqu'à i^(10). C'est possible en une ligne, mais tu peux le faire en plusieurs déjà si tu n'y arrives pas.
+
