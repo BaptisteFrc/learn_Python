@@ -8,4 +8,10 @@ Essaies de créer les listes suivantes grace aux listes par compréhension :
 Ensuite essaies de faire le problème euler n°1 : https://projecteuler.net/problem=1 ; ça devrait être du gateau.
 
 Plus dur : Essaies de créer une liste POWER tel que POWER[i] soit une liste contenant les puissances de i jusqu'à i^(10). C'est possible en une ligne, mais tu peux le faire en plusieurs déjà si tu n'y arrives pas.
+Par exemple si on crée POWER pour les entiers de 1 à 5 on a 
+POWER = [[1, 1, 1, 1, 1, ...],
+	 [2, 4, 8, 16, ...],
+	 [3, 9, 27, ...],
+	 [4, 16, 64, ...],
+	 [5, 25, 625, ...]]
 
