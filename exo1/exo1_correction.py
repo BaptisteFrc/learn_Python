@@ -36,5 +36,7 @@ def counter_example(M):
             return i
     return 0
 
+
+
 #print("answer :", counter_example(10000000))
 
