@@ -27,5 +27,4 @@ def calculator(n):
         if Test: 
             return k
 
-n = int(input())
-print("solution =", calculator(n))
+print("solution =", calculator(int(input())))

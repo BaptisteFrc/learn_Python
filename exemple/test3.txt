@@ -1,0 +1,6 @@
+4
+name/age/weight/nationality
+pedro aka "la terreur du village"/45/92/portuguese
+fransesco aka "el traficante"/21/73/spanish
+Mr.pizza aka "si molto peperoni"/63/68/italian
+moussa aka "muscles"/27/94/senegalese
