@@ -1,0 +1,31 @@
+Tu peux te créer un compte codeforces pour tenter de soumettre directement sur le site.
+Les problèmes Codeforces ne sont pas forcément évident, donc si tu y passes trop de temps passe à autre choses.
+
+Codeforces : 
+	- https://codeforces.com/problemset/problem/1300/A
+	- https://codeforces.com/problemset/problem/1323/A
+	- https://codeforces.com/problemset/problem/1315/A (le plus facile)
+
+Problème : 
+	Aider Jean-Michel Padoué à finaliser sa comptabilité de l'année 2020. Il a regroupé toutes ses dépenses et tous ses revenus par domaine dans le fichier transactions.txt.
+	La première ligne du fichier contient le nombre de transactions T.
+	Les T lignes suivantes représente une transaction. Elles sont composés de la manière suivante : 
+		"type_de_transaction domaine montant"
+	type_de_transaction admet deux valeurs possibles : "revenu" ou "dépense".
+	Pour aider Jean-Michel, il faut regrouper les transactions par type et par domaine ainsi qu'afficher la balance global.
+	Par exemple : 
+		INPUT
+		6
+		dépense nourriture 50
+		revenu salaire 1050
+		dépense loyer 600
+		dépense télévision 30
+		dépense nourriture 100
+		dépense nourriture 20
+
+		OUTPUT
+		dépense nourriture : 170
+		dépense loyer : 600
+		dépense télévision : 30
+		revenu salaire : 1050
+		balance : 250
