@@ -10,6 +10,7 @@ def ératosthène(n):
                 multiple += i
     return [i for i in range (n) if primes[i]]
 
+
 def calculator(n):
     primes = ératosthène(n)
     squares = [i**2 for i in range(int(sqrt(n))+1)]
