@@ -28,10 +28,3 @@ def list_calculator(s,m):
     return listas,l_1,l_2
 
 print(list_calculator(10,10))
-
-
-
-
-
-
-
