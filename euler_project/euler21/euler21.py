@@ -29,14 +29,6 @@ for i in range(1,10001):
 print(counter)         
 #31626
 
-
-
-
-
-
-
-
-
 """
 print(transformer(220))
 print(transformer(transformer(220)))
