@@ -12,8 +12,10 @@ Vous manipulerez ici les fonctions et structures de contrôle classiques de Pyth
 
 Avant de continuer il est vivement conseillé de regarder les deux vidéos suivantes réalisées par Benjamin Werner : 
 
-- *lien*
-- *lien*
+- https://drive.google.com/open?id=10bl-lLJ3MZAjSuQNMcX-bo3KxQZgv9p1
+- Vu mon niveau négatif en piratage, j'ai pas réussi à télécharger l'audio et la vidéo dans un seul fichier. Il faut donc lancer les deux en parallèle ^^ désolé : 
+    - https://drive.google.com/open?id=1vkQDHCMpPMTB9pnYdZe8vIhXMMCKMgdE (audio) 
+    - https://drive.google.com/open?id=1KdMLixeFGFaaAwKbU-2zJUEh_ckKOVzG (vidéo)
 
 ## Seuil de percolation
 
