@@ -17,9 +17,9 @@ solution = 0
 for pandigital in list_pandigital:
     if int(pandigital[3]) not in [0,2,4,6,8]:
         continue
-    elif sum([int(pandigital[i]) for i in range(2,5)]) % 3 != 0:
+    if sum([int(pandigital[i]) for i in range(2,5)]) % 3 != 0:
         continue
-    elif int(pandigital[5]) not in [0,5]:
+    if int(pandigital[5]) not in [0,5]:
         continue
 
     number_5_to_7 = [int(pandigital[i]) for i in range(4,7)]
@@ -43,5 +43,4 @@ for pandigital in list_pandigital:
 print(solution)
 print(time() - start_time)
 
-#16695334890
 #16695334890

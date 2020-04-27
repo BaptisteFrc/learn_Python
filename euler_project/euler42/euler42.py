@@ -29,5 +29,3 @@ for valeur_nom in liste_valeur_nom:
 print(liste_nombres_triangulaires)
 print(solution)
 print(time()-start_time)
-
-
