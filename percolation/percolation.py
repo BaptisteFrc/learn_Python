@@ -1,24 +1,45 @@
 from random import randint
 
-size = 10
-lenght = size * size
+size = 100
+length = size * size
 grid = []
 
 
 def init():
-    for _ in range(lenght):
-        grid.append(False)
+    global grid
+    grid = [False for _ in range(length)]
 
 def randomShadow():
     test_white = False
     while not test_white:
-        random_line = randint(0,size-1)
-        random_column = randint(0,size-1)
-        random_index = random_line * size + random_column
+        random_index = randint(0, length - 1)
         if not grid[random_index]:
             grid[random_index] = True
             test_white = True
     return random_index
+
+def detectPath(seen, n, up):
+    seen[n] = True
+    if up and n < size:
+        return True
+    elif not up and n >= length - size:
+        return True
+    if n >= size and grid[n - size] and not seen[n - size]:
+        if detectPath(seen, n - size, up):
+            return True
+    if n < length - size and grid[n+size] and not seen[n + size]:
+        if detectPath(seen, n + size, up):
+            return True
+    if n % size != 0 and grid[n - 1] and not seen[n -1]:
+        if detectPath(seen, n - 1, up):
+            return True
+    if n % size != size - 1 and grid[n+1] and not seen[n + 1]:
+        if detectPath(seen, n + 1, up):
+            return True
+    return False 
+
+def isNaivePercolation(n):
+    return detectPath([False for _ in range(length)], n, True) and detectPath([False for _ in range(length)], n, False)
 
 def detectPathUp(seen_up, seen_path_up, n, up, left, right, list_test):
     if n in range(size):
@@ -56,11 +77,11 @@ def detectPathUp(seen_up, seen_path_up, n, up, left, right, list_test):
     return 
 
 def detectPathDown(seen_down, seen_path_down, n, down, left, right, list_test):
-    if n in range(lenght - size, lenght):
+    if n in range(length - size, length):
         list_test.append(True)
         return
     if grid[down] and down not in seen_down and down not in seen_path_down:
-        if down in range(lenght - size, lenght):
+        if down in range(length - size, length):
             list_test.append(True)
             return 
         else:
@@ -90,7 +111,7 @@ def detectPathDown(seen_down, seen_path_down, n, down, left, right, list_test):
     seen_down.append(n)
     return 
 
-def  isNaivePercolation(n):
+def  isNaivePercolationOld(n):
     N = n
     left = n - 1
     right = n + 1
@@ -131,27 +152,22 @@ def isPercolation(n):
 
 def percolation():
     init()
-
-
     counter = 0
     solution = False
     while not solution:
         solution = isPercolation(randomShadow())
         counter +=1
     
-    return(counter/100)
+    return(counter/length)
 
 def printer():
-    for line in range(size):
-        l = []
-        for column in range(size):
-            index = line * size + column
-            if grid[index]:
-                index = "*"
+    for i in range(size):
+        for j in range(size):
+            if grid[i*size+j]:
+                print("*", end="")
             else:
-                index = "-"
-            l.append(index)
-        print(l)
+                print("-", end="")
+        print()
 
 print(percolation())
 printer()
