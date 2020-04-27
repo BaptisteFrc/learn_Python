@@ -27,7 +27,7 @@ Pour représenter une matrice carrée **M** de taille `size`, nous allons utilis
 
 ### Exercice 1 : création du fichier
 
-Dans un nouveau fichier `percolation.py`, définir les constantes `size`, dans un premier temps égal à 10, et correspondant à la taille d’une matrice carré et `length` de valeur `size * size`. Ce fichier contiendra aussi une liste de liste de booléens `grid` de taille `length` correspondant à la matrice : une case contenant `True` sera noire et une contenant `False` sera blanche.
+Dans un nouveau fichier `percolation.py`, définir les constantes `size`, dans un premier temps égal à 10, et correspondant à la taille d’une matrice carré et `length` de valeur `size * size`. Ce fichier contiendra aussi une liste de booléens `grid` de taille `length` correspondant à la matrice : une case contenant `True` sera noire et une contenant `False` sera blanche.
 
 ### Exercice 2 : fonction **`init`**
 
@@ -117,7 +117,7 @@ Coder cette optimisation dans deux fonctions `fastFind` et `fastUnion`. Comparer
 
     Coder la compression de chemin simplifiée dans une fonction `logFind` et comparer l’efficacité de cette implémentation avec celle des autres versions en modifiant `find` et `union`.
 
-### Exercice 12 : optimisation du nombre de recherches
+### Exercice 10 : optimisation du nombre de recherches
 
 Maintenant que la fonction d’union est logarithmique, il devient avantageux de réduire le nombre de recherches, quitte à augmenter le nombre d’unions. Pour ce faire, nous allons introduire deux éléments distingués à la fin des tableaux d’Union-Find (dont les tailles seront donc égales à celle de la matrice + 2) pour représenter l’intégralité des bords haut et bas. Ainsi, il devient possible d’effectuer le test de percolation en comparaison simplement les classes d’équivalence de ces deux éléments distingués avec un unique test, sans même tenir compte de la dernière case noircie.
 
