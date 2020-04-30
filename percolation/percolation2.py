@@ -33,7 +33,7 @@ def naiveUnion(n, m):
     global equiv
     corresponding_classe_n = find(n)
     corresponding_classe_m = find(m)
-    equiv = [corresponding_classe_m if i == corresponding_classe_n else i   for i in equiv]
+    equiv = [corresponding_classe_m if i == corresponding_classe_n  else i   for i in equiv]
     return corresponding_classe_m
 
 def find(n):
@@ -49,7 +49,7 @@ def randomShadow():
         if not grid[random_index]:
             grid[random_index] = True
             test_white = True
-    propagateUnion(random_index)
+            propagateUnion(random_index)
     return random_index
 
 def propagateUnion(n):
@@ -67,15 +67,16 @@ def propagateUnion(n):
 
 
 def isFastPercolation(n):
+    corresponding_classe_n = find(n)
     solution = False
-    for first_line in range(size):
-        if find(n) == find(first_line):
+    for first_line in equiv[:size]:
+        if first_line == corresponding_classe_n:
             solution = True
             break
     if solution:
         solution = False
-        for last_line in range(length - size, length):
-            if find(n) == find(last_line):
+        for last_line in equiv[length - size : length]:
+            if last_line == corresponding_classe_n:
                 solution = True
     return solution
 
