@@ -48,13 +48,6 @@ def logUnion(n, m):
 # quand un arbre s'accroche a un autre de meme taille, l'arbre resultant gagne 1 en taille.
 # si les deux arbres ont une taille differente, l'arbre resultant garde la meme taille.
 
-
-
-def fastUnion(n, m):
-    equiv[find(n)] = find(m)
-    return find(m) 
-
-
 def find(n):
     return fastFind(n)
 
