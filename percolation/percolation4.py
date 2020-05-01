@@ -30,8 +30,13 @@ def init():
     height = [1 for i in range(length)]
 
 def fastFind(n):
+    l = []
     while equiv[n] != n:
+        l.append(n)
         n = equiv[n]
+    for i in l:
+        equiv[i] = n
+    
     return n
 
 def logUnion(n, m):
@@ -103,9 +108,12 @@ def percolation():
     counter = 0
     solution = False
     while not solution:
-        solution = isPercolation(randomShadow())
+        solution = isPercolation(randomShadow())    
         counter +=1
-    
+        """
+        if counter % 1000 == 0:
+            print(counter)
+        """
     return (counter/length)
 
 def printer():
