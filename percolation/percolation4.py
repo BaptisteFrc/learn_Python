@@ -26,16 +26,14 @@ def init():
     global equiv
     global height
     grid = [False for _ in range(length)]
-    equiv = [i for i in range(length)]
+    equiv = [0 if i < size  else length - 1 if i >= length - size  else i for i in range(length)]
+    #equiv = [i for i in range(length)]
     height = [1 for i in range(length)]
 
 def fastFind(n):
-    l = []
     while equiv[n] != n:
-        l.append(n)
+        equiv[n] = equiv[equiv[n]]
         n = equiv[n]
-    for i in l:
-        equiv[i] = n
     
     return n
 
@@ -80,9 +78,12 @@ def propagateUnion(n):
         union(n + 1, n)
 
 
+def isFastPercolation(n):
+    if find(0) == find(length - 1):
+        return True
+    return False
 
-
-
+"""
 def isFastPercolation(n):
     corresponding_classe_n = find(n)
     solution = False
@@ -96,7 +97,7 @@ def isFastPercolation(n):
             if find(last_line) == corresponding_classe_n:
                 solution = True
     return solution
-
+"""
 
 
 
@@ -134,7 +135,4 @@ def monteCarlo(n):
 
 print(monteCarlo(int(sys.argv[1])))
 print(time() - start_time)
-"""
-print(height)
-print(max(height))
-"""
+
