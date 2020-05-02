@@ -6,6 +6,7 @@ list_pentagonal = []
 for n in range(1,2501):
     list_pentagonal.append(int(n*(3*n-1)/2))
 
+set_pentagonal = set(list_pentagonal)
 
 solution = []
 solution_difference = 100000000
@@ -24,7 +25,7 @@ for number1 in range(2500):
                 break
        
         number_difference = number_2 - number_1
-        if number_difference in list_pentagonal and (number_1 + number_2) in list_pentagonal:
+        if number_difference in set_pentagonal and (number_1 + number_2) in set_pentagonal:
             if solution_difference > number_difference:
                 if number_difference != 0:
                     solution_difference = number_difference
