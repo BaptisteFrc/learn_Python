@@ -22,14 +22,14 @@ for number1 in range(2500):
         if number2 != 2499:
             if number_1 + number_2 < list_pentagonal[number2 + 1]:
                 break
-       
+        
         number_difference = number_2 - number_1
         if number_difference in list_pentagonal and (number_1 + number_2) in list_pentagonal:
             if solution_difference > number_difference:
                 if number_difference != 0:
                     solution_difference = number_difference
                     solution = [number_1 , number_2]
-           
+
 print(solution)
 print(solution_difference)
 print(time() - start_time)

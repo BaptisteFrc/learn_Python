@@ -10,32 +10,23 @@ grid = []
 equiv = []
 height = []
 
-"""
-grid = [False,False,False,False,False,False,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False,False,False,True,False,False,True,False,False,False,False,False,False,True,True,False,True,False,False,False,False,False,False,False,True,False,True,False,False,False,False,False,False,False,True,True,True,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,True,True,True,True,True,True,True,True,False,False,False,False,False,False,False,False,False,True,False,False]
-equiv = [i for i in range(length)]
-for i in range(length):
-    if grid[i]:
-        equiv[i] = 6
-"""
-
-
-
 
 def init():
     global grid
     global equiv
     global height
     grid = [False for _ in range(length)]
-    equiv = [0 if i < size  else length - 1 if i >= length - size  else i for i in range(length)]
-    #equiv = [i for i in range(length)]
+    equiv = [0 if i < size else length - 1 if i >= length - size else i for i in range(length)]
     height = [1 for i in range(length)]
+
 
 def fastFind(n):
     while equiv[n] != n:
         equiv[n] = equiv[equiv[n]]
         n = equiv[n]
-    
+
     return n
+
 
 def logUnion(n, m):
     if height[find(n)] == height[find(m)]:
@@ -54,8 +45,10 @@ def logUnion(n, m):
 def find(n):
     return fastFind(n)
 
+
 def union(n, m):
     return logUnion(n, m)
+
 
 def randomShadow():
     test_white = False
@@ -66,6 +59,7 @@ def randomShadow():
             test_white = True
             propagateUnion(random_index)
     return random_index
+
 
 def propagateUnion(n):
     if n >= size and grid[n - size]:
@@ -83,47 +77,32 @@ def isFastPercolation(n):
         return True
     return False
 
-"""
-def isFastPercolation(n):
-    corresponding_classe_n = find(n)
-    solution = False
-    for first_line in equiv[:size]:
-        if find(first_line) == corresponding_classe_n:
-            solution = True
-            break
-    if solution:
-        solution = False
-        for last_line in equiv[length - size : length]:
-            if find(last_line) == corresponding_classe_n:
-                solution = True
-    return solution
-"""
-
-
 
 def isPercolation(n):
     return isFastPercolation(n)
+
 
 def percolation():
     init()
     counter = 0
     solution = False
     while not solution:
-        solution = isPercolation(randomShadow())    
-        counter +=1
+        solution = isPercolation(randomShadow())
+        counter += 1
         """
         if counter % 1000 == 0:
             print(counter)
         """
     return (counter/length)
 
+
 def printer():
     for i in range(size):
         for j in range(size):
             if grid[i * size + j]:
-                print("*", end = "")
+                print("*", end="")
             else:
-                print("-", end = "")
+                print("-", end="")
         print()
 
 
@@ -133,6 +112,6 @@ def monteCarlo(n):
         mean += percolation()
     return (mean/n)
 
+
 print(monteCarlo(int(sys.argv[1])))
 print(time() - start_time)
-
