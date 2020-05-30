@@ -1,3 +1,7 @@
+from time import time 
+
+start_time = time()
+
 lines = {}
 for i in range(15):
     lines[i+1] = list(map(int, input().split(" ")))
@@ -18,7 +22,8 @@ for a in range(2):
                                             for l in range(k,k+2):
                                                 for m in range(l,l+2):
                                                     for n in range(m,m+2):
-                                                        Sum =75 + lines[2][a] + lines[3][b] + lines[4][c] + lines[5][d] + lines[6][e] + lines[7][f] + lines[8][g] + lines[9][h] + lines[10][i] + lines[11][j] + lines[12][k] + lines[13][l] + lines[14][m] + lines[15][n]
+                                                        Sum = 75 + lines[2][a] + lines[3][b] + lines[4][c] + lines[5][d] + lines[6][e] + lines[7][f] + lines[8][g] + lines[9][h] + lines[10][i] + lines[11][j] + lines[12][k] + lines[13][l] + lines[14][m] + lines[15][n]
                                                         list_sum.append(Sum)
 
 print(max(list_sum))
+print(time() - start_time)
